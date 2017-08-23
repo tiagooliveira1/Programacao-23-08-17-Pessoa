@@ -1,5 +1,6 @@
 package opet.aulatds171a.main;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import opet.aulatds171a.pessoa.Pessoa;
@@ -15,17 +16,40 @@ public class Main {
 		
 		
 		Pessoa[] arrPessoa = new Pessoa[LIMITE_PESSOAS];
-		for(int i=0;i<LIMITE_PESSOAS;i++) {
+		
+		/**
+		 * Modelo anterior, utilizando Array
+		 */
+		
+		/*for(int i=0;i<LIMITE_PESSOAS;i++) {
 			arrPessoa[i] = montarPessoa();
 		}
-		
-		/* Listando todos os objetos Pessoa */
+		// Listando todos os objetos Pessoa 
 		for(int i=0;i<arrPessoa.length;i++) {
 
 			System.out.println("Nome:"+arrPessoa[i].getNome());
 			System.out.println("Sexo:"+arrPessoa[i].getSexo());
 			System.out.println("Nome:"+arrPessoa[i].getDataNascimento()); 
+		} */
+		
+		
+		/**
+		 * Exemplo usando ArrayList
+		 */ 		 
+		  
+		ArrayList<Pessoa> listaPessoas = new ArrayList<Pessoa>();
+		/* Insere pessoas na lista*/
+		for(int i=0; i<LIMITE_PESSOAS;i++) {
+			
+			listaPessoas.add(montarPessoa() );  
 		}
+		/* Lista as pessoas constantes no ArrayList */
+		for (Pessoa pessoa : listaPessoas) {
+			System.out.println("Nome: "+pessoa.getNome());
+			System.out.println("Sexo: "+pessoa.getSexo());
+			System.out.println("Data: "+pessoa.getDataNascimento());
+		}
+		
 
 	}
 	
