@@ -41,13 +41,22 @@ public class Main {
 		/* Insere pessoas na lista*/
 		for(int i=0; i<LIMITE_PESSOAS;i++) {
 			
-			listaPessoas.add(montarPessoa() );  
+			//listaPessoas.add(montarPessoa() );  
+			listaPessoas.add(new Pessoa("Tiago", "M", new Date("12/31/2017")));
 		}
 		/* Lista as pessoas constantes no ArrayList */
 		for (Pessoa pessoa : listaPessoas) {
 			System.out.println("Nome: "+pessoa.getNome());
 			System.out.println("Sexo: "+pessoa.getSexo());
 			System.out.println("Data: "+pessoa.getDataNascimento());
+		}
+		
+		/**
+		 * Remove elementos do ArrayList
+		 */
+		for(int i=listaPessoas.size()-1; i >- 1;i--) {
+			
+			listaPessoas.remove(i);  
 		}
 		
 
